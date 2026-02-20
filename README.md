@@ -2,6 +2,13 @@
 
 ![Header Image](header.jpg)
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Node.js-18.x+-43853D?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
+  <img src="https://img.shields.io/badge/Discord.js-14.x-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord.js" />
+  <img src="https://img.shields.io/badge/WebSocket-WS-000000?style=for-the-badge" alt="WebSocket" />
+  <img src="https://img.shields.io/badge/Chokidar-5.x-blue?style=for-the-badge" alt="Chokidar" />
+</p>
+
 このツールはAntigravity (VS Code Fork) を Discord から操作するためのボットです。
 Chrome DevTools Protocol (CDP) を使用して Antigravity の内部状態にアクセスし、メッセージの送信や操作の自動化を行います。
 > ※ 本ツールは公式のAntigravityとは無関係の非公式ツールです。

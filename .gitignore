@@ -13,3 +13,4 @@ inspect_dom.js
 restart_antigravity_debug.bat
 .DS_Store
 Thumbs.db
+tests/*.png
