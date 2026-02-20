@@ -1358,11 +1358,24 @@ client.on('interactionCreate', async interaction => {
 client.on('messageCreate', async message => {
     if (message.author.bot) return;
 
+    // 許可ユーザーのみ受け付ける
+    if (message.author.id !== process.env.DISCORD_ALLOWED_USER_ID) return;
+
     // Ignore old slash commands that people might manually type
     if (message.content.startsWith('/')) return;
+
+    lastActiveChannel = message.channel;
+
+    const cdp = await ensureCDP();
+    if (!cdp) {
+        message.react('❌');
+        message.reply('❌ Antigravityに接続できません。デバッグモードで起動しているか確認してください。');
+        return;
+    }
+
     let messageText = message.content || '';
     if (message.attachments.size > 0) {
-        const uploadDir = path.join(WORKSPACE_ROOT, 'discord_uploads');
+        const uploadDir = path.join(WORKSPACE_ROOT || '.', 'discord_uploads');
         if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
 
         const downloadedFiles = [];
